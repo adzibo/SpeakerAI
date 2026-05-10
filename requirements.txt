@@ -1,0 +1,22 @@
+# ==============================================================================
+# SpeakerTTS — requirements.txt
+# Entorno: VenvTTS (Python 3.10+ recomendado, testeado en 3.10/3.11)
+# GPU:      NVIDIA RTX 4080 SUPER — CUDA 12.x
+#
+# INSTALACIÓN:
+#   source VenvTTS/bin/activate
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements.txt
+# ==============================================================================
+
+# --- Core TTS (fork activo y mantenido de coqui-ai/TTS) ----------------------
+coqui-tts>=0.27.0
+
+# --- Audio --------------------------------------------------------------------
+soundfile>=0.12.0
+librosa>=0.11.0
+numpy>=1.26.0
+
+# --- Utilidades ---------------------------------------------------------------
+tqdm>=4.64.1
+pyyaml>=6.0
