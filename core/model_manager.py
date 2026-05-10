@@ -54,7 +54,6 @@ class ModelManager:
     # ------------------------------------------------------------------
     # Consulta
     # ------------------------------------------------------------------
-
     def list_voices(self, verbose: bool = True) -> List[Dict]:
         """
         Lista todas las voces fine-tuned disponibles.
@@ -109,7 +108,6 @@ class ModelManager:
     # ------------------------------------------------------------------
     # Rutas útiles para trainer y synthesizer
     # ------------------------------------------------------------------
-
     def get_base_dir(self) -> Path:
         return self.base_dir
 
@@ -129,7 +127,6 @@ class ModelManager:
     # ------------------------------------------------------------------
     # Speaker Embedding
     # ------------------------------------------------------------------
-
     def save_speaker_embedding(
         self,
         name: str,
@@ -167,7 +164,6 @@ class ModelManager:
     # ------------------------------------------------------------------
     # Eliminación
     # ------------------------------------------------------------------
-
     def delete_voice(self, name: str, force: bool = False) -> bool:
         """
         Elimina completamente una voz entrenada:
@@ -210,7 +206,6 @@ class ModelManager:
     # ------------------------------------------------------------------
     # Internos
     # ------------------------------------------------------------------
-
     def _missing_files(self, directory: Path, required: List[str]) -> List[str]:
         """Devuelve la lista de ficheros requeridos que no están presentes en el directorio."""
         return [f for f in required if not (directory / f).exists()]

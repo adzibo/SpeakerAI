@@ -16,10 +16,10 @@ Comandos disponibles:
     python3 speaker.py --download-base
 
 Ejemplos:
-    python3 speaker.py -t audioAdil -n Adil
-    python3 speaker.py -g Adil descripcion.txt -o AdilVoiceFile.wav
+    python3 speaker.py -t audioAdil -n VozAdil
+    python3 speaker.py -g VozAdil descripcion.txt -o VoiceFile.wav
     python3 speaker.py --list
-    python3 speaker.py --delete Adil
+    python3 speaker.py --delete VozAdil
 """
 
 import argparse
@@ -342,7 +342,6 @@ def handle_download_base() -> None:
 # ══════════════════════════════════════════════════════════════════════════════
 # MAIN
 # ══════════════════════════════════════════════════════════════════════════════
-
 def main() -> None:
     """
     Punto de entrada principal del CLI.

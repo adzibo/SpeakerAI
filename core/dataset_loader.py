@@ -26,11 +26,11 @@ from typing import List, Tuple
 
 # Parámetros de audio exigidos (los que se exportan desde Audacity)
 REQUIRED_SAMPLE_RATE = 22050
-REQUIRED_CHANNELS = 1   # mono
-REQUIRED_SAMPWIDTH = 2  # PCM 16-bit → 2 bytes por muestra
+REQUIRED_CHANNELS = 1               # mono
+REQUIRED_SAMPWIDTH = 2              # PCM 16-bit → 2 bytes por muestra
 
-MIN_DURATION_SECONDS = 30 * 60    # 30 minutos mínimo recomendado
-MAX_DURATION_SECONDS = 120 * 60   # 120 minutos máximo (más no aporta)
+MIN_DURATION_SECONDS = 30 * 60      # 30 minutos mínimo recomendado
+MAX_DURATION_SECONDS = 120 * 60     # 120 minutos máximo (más no aporta)
 
 
 @dataclass
@@ -73,9 +73,8 @@ class DatasetLoader:
         self.metadata_path = self.dataset_path / "metadata.csv"
 
     # ------------------------------------------------------------------
-    # API pública
+    # API
     # ------------------------------------------------------------------
-
     def validate(self, verbose: bool = True) -> DatasetInfo:
         """
         Ejecuta todas las validaciones y devuelve un DatasetInfo.
@@ -150,7 +149,6 @@ class DatasetLoader:
     # ------------------------------------------------------------------
     # Métodos privados
     # ------------------------------------------------------------------
-
     def _parse_metadata(self) -> Tuple[List[Tuple[str, str]], List[str]]:
         """
         Lee metadata.csv y devuelve la lista de muestras y los errores encontrados.

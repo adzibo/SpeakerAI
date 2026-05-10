@@ -72,9 +72,8 @@ class Synthesizer:
         self._device = None
 
     # ------------------------------------------------------------------
-    # API pública
+    # API
     # ------------------------------------------------------------------
-
     def generate(
         self,
         text_source: str,
@@ -139,7 +138,6 @@ class Synthesizer:
     # ------------------------------------------------------------------
     # Carga del modelo
     # ------------------------------------------------------------------
-
     def _load_model(self) -> None:
         """
         Carga el modelo fine-tuned en memoria (GPU si está disponible, CPU si no).
@@ -192,7 +190,6 @@ class Synthesizer:
     # ------------------------------------------------------------------
     # Speaker Embedding
     # ------------------------------------------------------------------
-
     def _get_speaker_embedding(self):
         """
         Devuelve (gpt_cond_latent, speaker_embedding).
@@ -256,7 +253,6 @@ class Synthesizer:
     # ------------------------------------------------------------------
     # Segmentación de texto
     # ------------------------------------------------------------------
-
     def _split_text(self, text: str) -> list:
         """
         Segmenta el texto en frases con pysbd.
@@ -299,7 +295,6 @@ class Synthesizer:
     # ------------------------------------------------------------------
     # Síntesis frase a frase
     # ------------------------------------------------------------------
-
     def _synthesize_sentences(
         self,
         sentences: list,
@@ -337,7 +332,6 @@ class Synthesizer:
     # ------------------------------------------------------------------
     # Guardado del audio
     # ------------------------------------------------------------------
-
     def _save_audio(self, audio_chunks: list, output_path: Optional[str]) -> Path:
         """Concatena los chunks y guarda el WAV final."""
         import soundfile as sf
@@ -375,7 +369,6 @@ class Synthesizer:
     # ------------------------------------------------------------------
     # Utilidades
     # ------------------------------------------------------------------
-
     def _read_text(self, source: str) -> str:
         """Lee texto desde un archivo .txt o lo devuelve tal cual si es string."""
         path = Path(source)

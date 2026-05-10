@@ -69,9 +69,8 @@ class Trainer:
         self.dataset_path = self.root / "datasets" / dataset_name
 
     # ------------------------------------------------------------------
-    # API pública
+    # API
     # ------------------------------------------------------------------
-
     def run(self) -> None:
         """Ejecuta el pipeline completo de fine-tuning."""
         print(f"\n{'='*60}")
@@ -117,7 +116,6 @@ class Trainer:
     # ------------------------------------------------------------------
     # Pasos privados
     # ------------------------------------------------------------------
-
     def _validate_dataset(self) -> None:
         loader = DatasetLoader(str(self.dataset_path))
         info = loader.validate(verbose=True)
