@@ -1,8 +1,5 @@
 # ==============================================================================
 # SpeakerTTS — requirements.txt
-# Entorno : VenvTTS  (Python 3.10)
-# GPU     : NVIDIA RTX 4080 SUPER — CUDA 12.x
-# OS      : WSL Ubuntu 22.04 en Windows 11
 #
 # INSTALACIÓN COMPLETA (en orden):
 #
@@ -18,34 +15,13 @@
 #
 #   4. Descargar el modelo base xtts_v2:
 #        python3 speaker.py --download-base
-#
-# NOTAS SOBRE VERSIONES:
-#
-#   · transformers 4.57.6 — versión verificada y funcional.
-#     - transformers >= 5.0 eliminó isin_mps_friendly, usado internamente
-#       por coqui-tts en TTS/tts/layers/xtts/gpt.py.
-#     - transformers >= 4.50 introduce advertencias sobre GPT2InferenceModel
-#       y GenerationMixin pero sigue siendo funcional para entrenamiento
-#       e inferencia. No afecta al resultado del audio.
-#     - Se fija a <5.0 para evitar roturas en futuras actualizaciones.
-#
-#   · coqui-tts (fork activo idiap/coqui-ai-TTS):
-#     - A partir de 0.27.4 PyTorch no se incluye como dependencia directa
-#       y debe instalarse por separado (ver paso 2 arriba).
-#     - Incluye GPTTrainer en TTS.tts.layers.xtts.trainer.gpt_trainer
-#       y XttsAudioConfig en TTS.tts.models.xtts (módulos distintos).
-#
-#   · PyTorch se instala en el paso 2 con la URL oficial de CUDA 12.1.
-#     No se incluye aquí para que pip no lo sobreescriba con una versión
-#     CPU genérica desde PyPI.
 # ==============================================================================
 
 # --- Core TTS -----------------------------------------------------------------
 coqui-tts>=0.27.0
 
 # --- Transformers -------------------------------------------------------------
-# Versión verificada y funcional en este proyecto: 4.57.6
-transformers>=4.47.0,<5.0
+transformers>=4.47.0,<5.0  # Versión verificada y funcional: 4.57.6
 
 # --- Audio --------------------------------------------------------------------
 soundfile>=0.12.0
