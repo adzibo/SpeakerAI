@@ -52,14 +52,14 @@ Construida sobre el modelo preentrenado **XTTS v2** de Coqui TTS, con fine-tunin
 
 ---
 
-## Requisitos de hardware
+## Entorno de desarrollo
 
 | Componente | Mínimo recomendado |
 |---|---|
 | GPU | NVIDIA con 8 GB VRAM (testado en RTX 4080 SUPER 16 GB) |
 | CUDA | 12.x |
-| RAM | 16 GB |
-| Almacenamiento | 10 GB libres para el modelo base |
+| RAM | 32 GB |
+| Almacenamiento | +100 GB libres |
 | OS | Linux / WSL Ubuntu 22.04 |
 
 ---
