@@ -73,27 +73,37 @@ git clone https://github.com/adzibo/SpeakerAI.git
 cd SpeakerAI
 ```
 
-### 2. Crear y activar el entorno virtual
+### 2. Crear directorios necesarios:
 
 ```bash
-python3 -m venv VenvTTS
-source VenvTTS/bin/activate
+mkdir datasets
+mkdir models
+mkdir models/base
+mkdir models/trained
+mkdir training
 ```
 
-### 3. Instalar PyTorch con soporte CUDA
+### 3. Crear y activar el entorno virtual
+
+```bash
+python3 -m venv ~/VenvTTS
+source ~/VenvTTS/bin/activate
+```
+
+### 4. Instalar PyTorch con soporte CUDA
 
 ```bash
 pip install torch torchvision torchaudio \
     --index-url https://download.pytorch.org/whl/cu121
 ```
 
-### 4. Instalar dependencias del proyecto
+### 5. Instalar dependencias del proyecto
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Descargar el modelo base XTTS v2
+### 6. Descargar el modelo base XTTS v2
 
 ```bash
 python3 speaker.py --download-base
